@@ -27,39 +27,20 @@
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
               <div class="card card-signin my-5">
                 <div class="card-body">
-                  <h5 class="card-title text-center">Cadastre-se</h5>
+                  <h5 class="card-title text-center">Entrar</h5>
                   <form class="form-signin" name="formCadastro" id="formulario">
                     
                     <div class="form-label-group">
                       <input type="text" id="inputNome" class="form-control" placeholder="Nome" required autofocus>
-                      <label for="inputNome">Nome Completo</label>
-                    </div>
-                    
-                    <div class="form-label-group">
-                        <input name="txtNome" type="email" id="inputEmail" class="form-control" placeholder="Email" required>
-                        <label for="inputEmail">E-mail</label>
-                    </div>
-                    
-                    <div class="form-label-group">
-                        <input name="txtEmail" type="text" id="inputTelefone" class="form-control" placeholder="Telefone" required>
-                        <label for="inputTelefone">Telefone</label>
-                      </div>
-                    <div class="form-label-group">
-                        <input name="txtDataNasc" type="date" id="inputDataNasc" class="form-control" placeholder="Data de nascimento" required>
-                        <label for="inputDataNasc">Data Nascimento</label>
+                      <label for="inputNome">Nome de usuário</label>
                     </div>
                     
                     <div class="form-label-group">
                       <input name="txtSenha" type="password" id="inputSenha" class="form-control" placeholder="Senha" required>
                       <label for="inputSenha">Senha</label>
                     </div>
-                    
-                    <div class="custom-control custom-checkbox mb-3">
-                      <input type="checkbox" class="custom-control-input" id="customCheck1">
-                      <label class="custom-control-label" for="customCheck1">Li e concordo com os <a href="#">termos.</a></label>
-                    </div>
 
-                    <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Cadastrar</button>
+                    <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Entrar</button>
                   </form>
                 </div>
               </div>
@@ -75,27 +56,10 @@
       
       e.preventDefault();
       let nome = $("#inputNome").val();
-      let email = $("#inputEmail").val();
-      let telefone = $("#inputTelefone").val();
-      let dataNasc = $("#inputDataNasc").val();
-      let senha = $("#inputSenha").val();
+      
+      localStorage.setItem('nomeUsuario', nome);
 
-      let cadastro = {
-        nome: nome,
-        email: email,
-        telefone: telefone,
-        dataNasc: dataNasc,
-        senha: senha
-      };
-
-      let cadastroString = JSON.stringify(cadastro);
-
-      let d = new Date();
-      let cadastroComHora = 'cadastro' + d.getTime();
-
-      localStorage.setItem(cadastroComHora, cadastroString);
-
-      location.reload();
+      window.location.href = "cursos.html";
     });
   </script>
 </body>
