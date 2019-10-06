@@ -108,6 +108,23 @@
     color: white;
     background-color: #3b5998;
   }
+
+  #btnSair {
+    padding: 1px 15px;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    outline: none;
+  }
+
+  #btnSair:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  #btnSair:active {
+    outline: none;
+  }
   
   /* Fallback for Edge
   -------------------------------------------------- */
