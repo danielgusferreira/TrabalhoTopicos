@@ -28,31 +28,37 @@
               <div class="card card-signin my-5">
                 <div class="card-body">
                   <h5 class="card-title text-center">Cadastre-se</h5>
-                  <form class="form-signin">
+                  <form class="form-signin" name="formCadastro" id="formulario">
+                    
                     <div class="form-label-group">
-                      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                      <label for="inputEmail">Nome Completo</label>
+                      <input type="text" id="inputNome" class="form-control" placeholder="Nome" required autofocus>
+                      <label for="inputNome">Nome Completo</label>
                     </div>
+                    
                     <div class="form-label-group">
-                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                        <input name="txtNome" type="email" id="inputEmail" class="form-control" placeholder="Email" required>
                         <label for="inputEmail">E-mail</label>
                     </div>
+                    
                     <div class="form-label-group">
-                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                        <label for="inputEmail">Telefone</label>
-                      </div>
-                      <div class="form-label-group">
-                          <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                          <label for="inputEmail">Data Nascimento</label>
+                        <input name="txtEmail" type="text" id="inputTelefone" class="form-control" placeholder="Telefone" required>
+                        <label for="inputTelefone">Telefone</label>
                       </div>
                     <div class="form-label-group">
-                      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                      <label for="inputPassword">Senha</label>
+                        <input name="txtDataNasc" type="date" id="inputDataNasc" class="form-control" placeholder="Data de nascimento" required>
+                        <label for="inputDataNasc">Data Nascimento</label>
                     </div>
+                    
+                    <div class="form-label-group">
+                      <input name="txtSenha" type="password" id="inputSenha" class="form-control" placeholder="Senha" required>
+                      <label for="inputSenha">Senha</label>
+                    </div>
+                    
                     <div class="custom-control custom-checkbox mb-3">
                       <input type="checkbox" class="custom-control-input" id="customCheck1">
                       <label class="custom-control-label" for="customCheck1">Li e concordo com os <a href="#">termos.</a></label>
                     </div>
+
                     <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Cadastrar</button>
                   </form>
                 </div>
@@ -63,5 +69,34 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script>
+    
+    $("#formulario").submit(function(e) {
+      
+      e.preventDefault();
+      let nome = $("#inputNome").val();
+      let email = $("#inputEmail").val();
+      let telefone = $("#inputTelefone").val();
+      let dataNasc = $("#inputDataNasc").val();
+      let senha = $("#inputSenha").val();
+
+      let cadastro = {
+        nome: nome,
+        email: email,
+        telefone: telefone,
+        dataNasc: dataNasc,
+        senha: senha
+      };
+
+      let cadastroString = JSON.stringify(cadastro);
+
+      let d = new Date();
+      let cadastroComHora = 'cadastro' + d.getTime();
+
+      localStorage.setItem(cadastroComHora, cadastroString);
+
+      location.reload();
+    });
+  </script>
 </body>
 </html>
