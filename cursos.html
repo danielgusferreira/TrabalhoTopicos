@@ -15,6 +15,7 @@
   <link rel="apple-touch-icon" sizes="144x144" href="/imagens/icones/apple-icon-144x144.png">
   <link rel="apple-touch-icon" sizes="152x152" href="/imagens/icones/apple-icon-152x152.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/imagens/icones/apple-icon-180x180.png">
+  <script src="fetch.js"></script>
   <script>
       navigator.serviceWorker.register('/sw.js');
   </script>
@@ -31,8 +32,8 @@
                 <div class="col-lg-4">
                   <div class="card mb-5 mb-lg-0">
                     <div class="card-body">
-                      <h5 class="card-titulo text-muted text-uppercase text-center">Gratis</h5>
-                      <h6 class="card-price text-center">R$0<span class="period">/mês</span></h6>
+                      <h5 id="idnome1"class="card-titulo text-muted text-uppercase text-center"></h5>
+                      <h6 id="idvalor1" class="card-price text-center"><span class="period">/mês</span></h6>
                       <hr>
                       <ul class="fa-ul">
                         <li><span class="fa-li"><i class="fas fa-check"></i></span>O que é PWA?</li>
@@ -48,8 +49,8 @@
                 <div class="col-lg-4">
                   <div class="card mb-5 mb-lg-0">
                     <div class="card-body">
-                      <h5 class="card-titulo text-muted text-uppercase text-center">Iniciante</h5>
-                      <h6 class="card-price text-center">R$10,99<span class="period">/mês</span></h6>
+                      <h5 id="idnome2"class="card-titulo text-muted text-uppercase text-center"></h5>
+                      <h6 id="idvalor2" class="card-price text-center"><span class="period">/mês</span></h6>
                       <hr>
                       <ul class="fa-ul">
                         <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>Todos os videos acima</strong></li>
@@ -66,8 +67,8 @@
                 <div class="col-lg-4">
                   <div class="card">
                     <div class="card-body">
-                      <h5 class="card-titulo text-muted text-uppercase text-center">Avançado</h5>
-                      <h6 class="card-price text-center">R$29,90<span class="period">/mês</span></h6>
+                      <h5 id="idnome3" class="card-titulo text-muted text-uppercase text-center"></h5>
+                      <h6 id="idvalor3" class="card-price text-center"><span class="period">/mês</span></h6>
                       <hr>
                       <ul class="fa-ul">
                         <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>Todos os videos acima</strong></li>
