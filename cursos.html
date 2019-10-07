@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head lang="pt-BR">
-  <title>Minha primeira PWA</title>
+  <title>Cursos PWA - Comprar</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="manifest" href="/manifest.json" />
@@ -110,19 +110,20 @@
       }, 500);
     });
 
-  function Comprar(a)
-  {
-    if(a == '1'){
-      alert("Parabens usuário você adiquiriu o curso gratuito de PWA!");
+    function Comprar(a) {
+      let nomeCurso = '';
+      let nomeUsuario = localStorage.getItem('nomeUsuario');
+
+      if (a == '1') {
+        nomeCurso = "gratuito";
+      } else if (a == '2') {
+        nomeCurso = "iniciante";
+      } else {
+        nomeCurso = "avançado";
+      }
+
+      alert(`Parabéns, ${nomeUsuario}, você adquiriu o curso ${nomeCurso} de PWA!`)
     }
-    else if(a == '2'){
-      alert("Parabens usuário você adiquiriu o curso iniciante de PWA!");
-    }
-    else
-    {
-      alert("Parabens usuário você adiquiriu o curso anvançado de PWA!");
-    }
-  }
   </script>
 </body>
 </html>
