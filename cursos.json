@@ -1,1 +1,17 @@
-[{"id" : "1","nome": "Grátis","valor" : "R$0"},{"id" : "2","nome": "Iniciante","valor" : "R$10,99"},{"id" : "3","nome": "Avançado","valor" : "R$29,90"}]
+[
+    {
+        "id" : "1",
+        "nome": "Grátis",
+        "valor" : "R$0"
+    },
+    {
+        "id" : "2",
+        "nome": "Iniciante",
+        "valor" : "R$10,99"
+    },
+    {
+        "id" : "3",
+        "nome": "Avançado",
+        "valor" : "R$29,90"
+    }
+]
